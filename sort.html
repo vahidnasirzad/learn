@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        <script>
+
+            var users = [
+                {
+                    name: 'Hamid',
+                    age: 23,
+                    gender: true
+                },
+                {
+                    name: 'Amir',
+                    age: 27,
+                    gender: true
+                },
+                {
+                    name: 'Majid',
+                    age: 16,
+                    gender: true
+                },
+                {
+                    name: 'Yasna',
+                    age: 7,
+                    gender: false
+                },
+            ];
+
+
+            for (var i = 0; i < users.length - 1; i++) {
+                for (var j = i + 1; j < users.length; j++) {
+                    if(users[i].age > users[j].age) {
+                        temp = users[i];
+                        users[i] = users[j];
+                        users[j] = temp;
+                    }
+                }
+            }
+
+            console.log(users)
+
+            users.forEach(function(user){
+                console.log(user.name, " with ", user.age, " years old is ", user.gender ? "male" : "female");
+            })
+        </script>
+    </body>
+</html>

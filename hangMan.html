@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hang Man</title>
+</head>
+<body style="text-align: center;">
+<input type="text" id="suggest">
+<hr>
+
+<script>
+
+    var wordList = ['hello', 'car', 'cat', 'dog'];
+    /* put random word here */
+    var word = 'cat';
+
+    var alpha = ['a', 'b', 'c', 'd', 'e', 'h'];
+    alpha.forEach(function (element) {
+        var el = document.createElement('button');
+        el.textContent = element;
+        el.id = element;
+        el.className = 'btns';
+        el.style.margin = '5px';
+        document.body.appendChild(el);
+    });
+
+    var btns = document.querySelectorAll('.btns');
+
+    btns.forEach(function(btn) {
+       btn.addEventListener('click', clicked);
+    });
+
+    function clicked(event) {
+        var id = event.target.id;
+        event.target.disabled = true;
+        event.target.style.color = 'white';
+
+        if (word.includes(id)) {
+            event.target.style.backgroundColor = 'green';
+        } else {
+            event.target.style.backgroundColor = 'red';
+            wrong ++;
+        }
+    }
+
+ -\/''0]08yy
+    // jQuery
+    // Ajax
+    // Cookie
+
+
+</script>
+
+</body>
+</html>

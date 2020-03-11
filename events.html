@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam at consequuntur corporis delectus deserunt ipsum iure libero magni nam omnis perspiciatis, praesentium quidem ratione, sunt, veniam vitae. Illo, necessitatibus.</p>
+
+<button id="dark">Dark Mode</button>
+<button id="white">White Mode</button>
+
+
+<script>
+    var dark = document.querySelector("#dark");
+    var white = document.querySelector("#white");
+
+    dark.addEventListener('click', dark_mode);
+    white.addEventListener('click', white_mode);
+
+    function dark_mode() {
+        document.body.style.backgroundColor = 'gray';
+        document.body.style.color = 'white';
+    }
+
+    function white_mode() {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+    }
+</script>
+</body>
+</html>

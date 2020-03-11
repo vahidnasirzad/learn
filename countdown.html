@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            text-align:center;
+        }
+        h1 {
+            text-shadow: 1px 1px;
+            background-color:lightblue;
+            border : solid 2px #ccc;
+            padding: 30px;
+            text-align: center;
+            margin : 20px;
+        }
+
+        p {
+                background-color: darkslateblue;
+                margin : 13px 50px;
+                border: 3px solid dimgray;
+                padding: 12px;
+                font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hang man game</h1>
+
+    <br>
+    <h1 id = "place"></h1>
+    <p id = "char"></p>
+        <h2 id = 'sik'></h2>
+</body>
+<script>
+    var wordlist = ['car','work','learn','find', 'life', 'sikh', 'mikh', 'abbas', 'mostafa'];
+    // random
+    var rand = Math.floor(Math.random()*wordlist.length);
+
+    var word = wordlist[rand] ;
+    document.getElementById('char').innerHTML = 'your word length :' +  word.length;
+
+
+
+    var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    alpha.forEach(function (elemnt){
+        var el = document.createElement('button');
+        el.textContent = elemnt;
+        el.id = elemnt;
+        el.className = 'btns';
+        el.style.margin = '5px 30px';
+        document.body.appendChild(el);
+    })
+    var btns = document.querySelectorAll('.btns');
+    btns.forEach(function(btn){
+        btn.addEventListener('click', clicked);
+    })
+    var wrong = 0;
+    var correct = 0;
+    function clicked(event){
+        var id = event.target.id;
+        event.target.disabled = true;
+        event.target.style.color = 'white';
+        if (word.includes(id)){
+            event.target.style.backgroundColor = 'green';
+            id = 
+            correct ++;
+
+        }else{
+            event.target.style.backgroundColor = 'red';
+            wrong ++;
+        }
+        if (wrong == word.length){
+            alert('you fuckd');
+            location.reload();
+        }
+        else if (correct == word.length){
+            alert ('you win and your word was ' + word);
+        }
+    }
+    //for place :
+    var plc = document.querySelector("#place");
+    var str = "";
+    for (i=0; i<word.length; i++){
+    str = str+"? ";
+    var plce = plc.textContent = str;
+
+
+}
+
+
+</script>
+</html>

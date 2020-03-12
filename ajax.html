@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Training</title>
+</head>
+<body>
+
+<script>
+   var url = "https://anzalifood.com/api?api_key=Aa@123";
+   var method = 'GET';
+
+   var http = new XMLHttpRequest();
+   http.open(method, url);
+   http.onreadystatechange = function () {
+        var response = JSON.parse(http.responseText);
+
+        response.forEach(function(element) {
+            console.log(element);
+        })
+
+        // JSON.stringify(json) output: string
+        // JSON.parse(string) output: json
+   };
+   http.send();
+
+</script>
+</body>
+</html>

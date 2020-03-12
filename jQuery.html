@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .red {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<p id="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis delectus eaque eveniet nihil, repellendus sint velit! Aliquam, est, quo? Aliquid commodi dolore ea fugiat laborum magni molestias, numquam praesentium.</p>
+<input type="text" id="amount">
+
+<button>show</button>
+<script src="jquery-3.4.1.slim.min.js"></script>
+<script>
+    // $("p").on(
+    //     {
+    //         click: function () {
+    //             console.log('clicked');
+    //         },
+    //         mouseenter: function() {
+    //             console.log('mouse entered');
+    //         }
+    //     }
+    // )
+
+    // $('p').fadeOut();
+
+    $.get("https://jsonplaceholder.typicode.com/posts",
+        function (result) {
+            // console.log(result)
+            var obj = JSON.parse(result);
+
+            obj.forEach(function (post) {
+                var card = document.createElement('div');
+                card.cla
+            })
+        }
+    );
+
+
+</script>
+</body>
+</html>
